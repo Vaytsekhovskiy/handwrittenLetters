@@ -128,7 +128,7 @@ def train_model_from_gui():
     try:
         hidden_units = int(hidden_units_entry.get())
     except ValueError:
-        hidden_units = 512
+        hidden_units = 128
     print(activation)
     print(hidden_units)
 

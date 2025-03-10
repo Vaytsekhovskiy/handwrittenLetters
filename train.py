@@ -46,13 +46,13 @@ y2 = tf.keras.utils.to_categorical(y2, number_of_classes)
 train_x, test_x, train_y, test_y = train_test_split(train_images, y1, test_size=0.2, random_state=42)
 
 
-def train_model(activation='relu', hidden_units=512):
+def train_model(activation='relu', hidden_units=128):
     model = tf.keras.Sequential([
-        tf.keras.layers.Conv2D(32, 3, input_shape=(28, 28, 1)),
-        tf.keras.layers.MaxPooling2D(2, 2),
+        # tf.keras.layers.Conv2D(32, 3, input_shape=(28, 28, 1)),
+        # tf.keras.layers.MaxPooling2D(2, 2),
         tf.keras.layers.Flatten(input_shape=(28, 28, 1)),
+        tf.keras.layers.Dense(512, activation=activation),
         tf.keras.layers.Dense(hidden_units, activation=activation),
-        tf.keras.layers.Dense(128, activation=activation),
         tf.keras.layers.Dense(number_of_classes, activation='softmax')
     ])
 
