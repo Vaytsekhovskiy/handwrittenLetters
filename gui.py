@@ -123,7 +123,6 @@ def check_thread_status(training_thread):
 def train_model_from_gui():
     # Получаем выбранную функцию активации
     activation = activation_var.get()
-
     # Получаем количество нейронов из поля ввода
     try:
         hidden_units = int(hidden_units_entry.get())
@@ -131,7 +130,6 @@ def train_model_from_gui():
         hidden_units = 128
     print(activation)
     print(hidden_units)
-
     # Отключаем кнопку, чтобы предотвратить повторное нажатие
     train_button.config(state=tk.DISABLED)
 
